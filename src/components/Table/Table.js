@@ -1,16 +1,11 @@
-import React, {useState, useEffect} from 'react'; 
+import React, {useState} from 'react'; 
 import './Table.scss';
-import '../Products/Products';
+import '../AddProducto/AddProducto';
 
 
+const Table = ({productos,deleteId, ...props}) => {
 
-
-const Table = ({productos, ...prods}) => {
-
-    const deleteProducts = () => {
-        // const delete = document.querySelector('.eliminar');
-        
-    }
+    
     
     return (
     <div>
@@ -22,7 +17,6 @@ const Table = ({productos, ...prods}) => {
                 <th className ="fila">make</th>
                 <th className ="fila">price</th>
                 <th className ="fila">option</th>
-            
             </tr>
             {productos.map(producto => {
                 return(
@@ -31,7 +25,7 @@ const Table = ({productos, ...prods}) => {
                         <td>{producto.name}</td>
                         <td>{producto.make}</td>
                         <td>{producto.price}</td>
-                        <td><button className="eliminar">{producto.eliminar}Delete</button></td>
+                        <td><button onClick={()=> deleteId(producto.id)} className="eliminar">{producto.eliminar}Delete</button></td>
                     </tr>
                 )
             })}

@@ -1,18 +1,29 @@
-import React from 'react';
-
-import Productos from './components/Products/Products';
-
+import React, {useState} from 'react';
+import AddProducto from './components/AddProducto/AddProducto';
+import Table from './components/Table/Table';
 import './App.css';
 
 
-// <Table productos>
+
 
 function App() {
+  const [productos, setProductos] = useState ([{
+    id:1,
+    name:'perfume',
+    make:'Ck',
+    price:600
+}]);
+
+const deleteId = id => {
+  const arr = [...productos];
+  const getId = arr.findIndex(producto => producto.id == id);
+  arr.splice(getId, 1);
+  setProductos(arr);
+}
   return (
-    <div >
-   
-      <Productos></Productos>
-    
+    <div>
+      <Table deleteId={deleteId} productos ={productos} ></Table>
+      <AddProducto newProductos={setProductos} productos={productos}></AddProducto>
     </div>
      
   );
