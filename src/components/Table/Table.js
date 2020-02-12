@@ -1,12 +1,9 @@
 import React, {useState} from 'react'; 
 import './Table.scss';
-import '../AddProducto/AddProducto';
+import '../Inputs/Inputs';
 
 
 const Table = ({productos,deleteId, ...props}) => {
-
-    
-    
     return (
     <div>
         <h1 className="title">Lista de productos</h1>

@@ -1,4 +1,4 @@
-.add{
+.add,.edit{
     height: 20px;
     background: #76db11;
     font-size: 14px;
@@ -8,6 +8,10 @@
     padding: 12px 13px 25px 13px;
     font-weight: bold;
 }
+.edit{
+    background: #d7d07c;
+    margin: 5px;
+}
 .space-add{
     display:inline-block;
 }
@@ -15,5 +19,5 @@
     margin:70px;
     box-shadow: 0 0 5px #666; 
     border: 20px solid white;
-    width: 664px;
+    width: 735px;
 }
